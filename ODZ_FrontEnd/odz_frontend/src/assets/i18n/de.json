@@ -1,0 +1,126 @@
+{
+    "NAVIGATION": {
+        "HOME": "Startseite",
+        "SEARCH": "Orgel-Suche",
+        "PERSONSEARCH": "Orgelbauer-Suche",
+        "MAPSEARCH": "Kartensuche",
+        "COMBINEDSEARCH": "Kombinierte Suche",
+        "LANGUAGE": "Sprache"
+    },
+
+    "HOME": {
+        "TITLE": "Die Orgeldatenbank des Orgeldokumentationszentrums der Hochschule Luzern – Musik",
+        "PARAGRAPH01": "Die Orgeldatenbank des Orgeldokumentationszentrums soll alle vorhandenen historischen sowie technischen Daten über Schweizer Orgeln und deren Erbauer durch die Sichtung vorhandener Publikationen sowie zukünftiger Archivforschungen erfassen.",
+        "PARAGRAPH02": "Sie wurde ursprünglich unter der Leitung von Prof. Dr. Thomas Olnhoff (Hochschule Luzern – Technik und Architektur) entwickelt. Die beiden Diplomanden Carli Beeli und Roland Rogenmoser schufen die Basisversion im Rahmen einer Diplomarbeit. Notwendige Programmierungsanpassungen leistete Prof. Olnhoff selbst. Die DB läuft auf einem MySql-Server Version 5.1. Zurzeit sind Vorarbeiten im Gange, um die bestehende Datenbank und die Applikationen anhand der technologischen Entwicklung der letzten Jahre auf einer noch leistungsfähigeren Basis für weitere Nutzungsmöglichkeiten anzupassen. Ein erster Schritt dazu sind die bereits erfolgten Arbeiten im Rahmen eines Wirtschaftsprojektes (Semesterarbeit) der Studenten Robin Bucher und Elia Grifo, unter der Leitung von dipl. Inf. Ing. Bruno Joho (Hochschule Luzern – Informatik), die neue Wege der inhaltlichen Erweiterung sowie der Abrufungsmöglichkeiten der Informationen begehen. In den nächsten Monaten werden die Umsetzung und Implementierung der Resultate angegangen. Nach wie vor betreut Herr Stefan Jäger die bestehenden Suchmasken, die er als ehem. Absolvent der Hochschule Luzern – Technik und Architektur entwickelt hatte.",
+        "PARAGRAPH03": "Dank eigener Forschungsarbeiten sowie der freundlichen Übergabe von Informationen aus anderen Quellen sind in der vorliegenden Datenbank bereits über 26'000 Datensätze vorhanden mit ausführlichen Angaben von über 900 noch bestehenden Instrumenten. Darunter sind ca. 4‘500 Datensätze mit Dispositionen und ca. 8‘000 Bilder zu finden. Neben diesen Datensätzen, die historische und technische Informationen liefern, sind in der Datenbank weiter ca. 1‘500 Einträge vorhanden, welche biografische Angaben über Orgelbauer, Organisten und Experten enthalten. Im Besonderen sei Herrn Peter Fasler (Basel) und der Firma Orgelbau Kuhn AG (Männedorf) für die Schenkung ihrer gesammelten Informationen herzlich gedankt.",
+        "PARAGRAPH04": "Ein Dank geht auch an weitere Personen, die dem ODZ freiwillig Daten geliefert haben: Dr. Georg Carlen (Luzern), Bruno Eberhard (Solothurn), Georges Enz (Sachseln), Lauro Filipponi (Gordevio), Urs Fischer (Ebikon), Dr. Josef Grünenfelder (Zug), Hans Hauenstein (Emmenbrücke), Dora Hegg (Bern), Simon Hebeisen (Luzern), Marina Jahn (Lugano), Dr. Friedrich Jakob (Uetikon am See), Jürg Johner (Cham), Otto Lustenberger († 2020, Luzern), Dr. Mario Manzin (Milano/Italien), Maria Teresa und Andrea Mascioni (Azzio/Italien), Heinrich Meier (Tägerig), Martino Milani (Locarno), Kurt Müller († 2011, Altdorf), Daniel Pürro (Willisau), Wolfgang Rehn (Oetwil am See), Charles-André Schleppy (La Chaux-de-Fonds), Mario Schwaller (Massagno), Hans Spielmann (Oberkirch), Dr. Herbert Ulrich (Luzern), Dieter Utz (Meggen), Edmond Voeffray (Martigny), Ulrich Wetter (Muttenz), Dr. François Widmer (Grandvaux), Rudolf Wyss (Rothenburg).",
+        "PARAGRAPH05": "Ein spezieller Dank geht auch an folgende Orgelbaufirmen, die freiwillig und grosszügig ihre Archive für die Forschungstätigkeit des ODZ geöffnet haben: Erni (Stans), Füglister (Grimisuat), Goll (Luzern), Graf (Sursee), Hauser (Kleindöttingen), Kuhn (Männedorf), Mascioni (Azzio/Italien), Mathis (Näfels), Metzler (Dietikon), Pürro (Willisau), Späth (Rüti).",
+        "PARAGRAPH06": "Die Arbeit wird Kanton für Kanton durchgeführt. Zurzeit sind die Orgeln der Kantone Luzern, Nidwalden, Obwalden, Schwyz, Solothurn, Ticino, Uri und Zug zur Benutzung bereit. Eine Aktualisierung der Informationen der Orgeln in den Kantonen Ticino und Uri ist in Bearbeitung. Da die importierten Datensätze korrigiert, harmonisiert und ergänzt werden sollten, sind vorläufig nur die bereits bearbeiteten anzusehen.",
+        "PARAGRAPH07": "Was den Inhalt der Datenbank betrifft, ist jedes Ereignis in der Geschichte eines Instrumentes und jede Veränderung an demselben in je einem einzelnen Datensatz gespeichert. Bei allen Orgeln wird der aktuelle Zustand (Erbauer, Disposition, Bilder, usw.) wiedergegeben. Die ganze Geschichte jedes Instrumentes wird nur summarisch aufgelistet. Da die vorliegenden Suchseiten nur eine Auswahl der in der Datenbank vorhandenen Informationen wiedergeben, können weitere Angaben direkt beim ODZ angefragt werden, wo man auch allfällige Korrekturen und Ergänzungen gerne entgegennimmt.",
+        "PARAGRAPH08": "Dr. Marco Brandazza, Leiter des ODZ"
+    },
+
+    "SEARCH": {
+        "TITLE": "Orgel-Suche",
+        "TITLEBUILDER": "Orgelbauer-Suche",
+        "PARAGRAPH": "Auf dieser Seite kann nach beliebigen Orgeln gesucht werden. Der eingegebene Suchbegriff schliesst alle Spalten ein.",
+        "PARAGRAPH02": "Zurzeit sind nur Informationen für die Kantone Luzern, Nidwalden, Obwalden, Solothurn, Tessin, Uri und Zug vorhanden.",
+        "SEARCHHELP": "Suchbegriff eingeben",
+        "PLACE": "Ort",
+        "KANTON": "Kanton",
+        "MASSNAHME": "Massnahme",
+        "DATE": "Datum",
+        "BUILDING": "Gebäude",
+        "BUILDER": "Orgelbauer",
+        "DETAILS": "Details",
+        "NOVALUE": "Keine Angabe"
+    },
+
+    "MAPSEARCH": {
+        "TITLE": "Kartensuche",
+        "PARAGRAPH": "Auf dieser Seite können Orgeln auf einer Karte gesucht werden.",
+        "SEARCHHELP": "Suchbegriff eingeben",
+        "SEARCHBUTTON": "Suchen",
+        "RESETBUTTON": "Zurücksetzen",
+        "PLACE": "Ort",
+        "BUILDING": "Gebäude",
+        "BUILDINGAREA": "Gebäudeteil",
+        "DETAILS": "Details"
+    },
+
+    "COMBINEDSEARCH": {
+        "TITLE": "Kombinierte Suche",
+        "MENUCANTON": {
+            "TITLE": "Kanton",
+            "CANTON01": "Luzern",
+            "CANTON02": "Nidwalden",
+            "CANTON03": "Obwalden",
+            "CANTON04": "Schwyz",
+            "CANTON05": "Solothurn",
+            "CANTON06": "Tessin",
+            "CANTON07": "Uri",
+            "CANTON08": "Zug"
+        },
+        "MENUPLACE": {
+            "TITLE": "Ort"
+        },
+        "MENUDATE": {
+            "TITLE": "Datum",
+            "FROM": "Ab Jahr",
+            "TO": "Bis Jahr"
+        },
+        "MENUMASSNAHME": {
+            "TITLE": "Massnahme",
+            "INCLUDED": "Berücksichtigte Massnahmen",
+            "NOTINCLUDED": "Nicht Berücksichtigte Massnahmen"
+        },
+        "MENUEXPERT": {
+            "TITLE": "Orgelbauer/Experte"
+        }
+    },
+
+    "CONTENTPAGE": {
+        "NOVALUE": "",
+        "PLACE": {
+            "TITLE": "Standort",
+            "PLACE": "Ort",
+            "KANTON": "Kanton",
+            "BUILDING": "Gebäude",
+            "BUILDINGAREA": "Gebäudeteil"
+        },
+        "PERSON": {
+            "TITLE": "Personen",
+            "BUILDER": "Orgelbauer",
+            "ACTION": "Massnahme",
+            "DATE": "Datum"
+        },
+
+        "ORGAN": {
+            "TITLE": "Orgel",
+            "NUMBERMANUALE": "Anzahl Manuale",
+            "MANUALSIZE": "Manualumfang",
+            "PEDALSIZE": "Pedalumfang",
+            "SPIELTRAKTUR": "Spieltraktur",
+            "REGISTER": "Registertraktur",
+            "SPIELHILFEN": "Spielhilfen",
+            "STIMMTONHOEHE": "Stimmtonhöhe",
+            "STIMMUNG": "Stimmung",
+            "BALGANLAGE": "Balanlage",
+            "WINDDRUCK": "Windruck in mm",
+            "COMMENTS": "Bemerkungen"
+        },
+
+        "DISPOSITION": {
+            "TITLE": "Disposition"
+        },
+
+        "SOURCES": {
+            "TITLE": "Quellen und Bilbliographie"
+        },
+
+        "HISTORY": {
+            "TITLE": "Orgelgeschichte",
+            "DETAILS": "Details"
+        }
+    }
+}

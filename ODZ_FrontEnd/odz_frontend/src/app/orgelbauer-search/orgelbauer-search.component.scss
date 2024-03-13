@@ -1,0 +1,120 @@
+.Header {
+  margin-top: 50px;
+  margin-left: 50px;
+  max-width: 100%;
+}
+
+.mat-table {
+  justify-content: left;
+  width: 100%;
+}
+
+.mat-paginator {
+  display: flex;
+  justify-content: left;
+}
+
+.mat-column-name {
+  flex: none;
+  width: 150px;
+}
+
+.mat-column-synonyme {
+  flex: none;
+  width: 100px;
+}
+
+.mat-column-kantonName {
+  flex: none;
+  width: 150px;
+}
+
+.mat-column-bezeichnung {
+  flex: none;
+  width: 150px;
+}
+
+.mat-column-gebaeude {
+  flex: none;
+  width: 200px;
+}
+
+.mat-column-kontakts {
+  flex: none;
+  width: 200px;
+}
+
+.mat-column-details {
+  flex: none;
+  width: 50px;
+}
+
+.mat-column-editierung {
+  flex: none;
+  width: 50px;
+}
+
+::ng-deep .mat-sort-header-arrow {
+  transform: none !important;
+  opacity: 1 !important;
+}
+
+@media (max-width: 900px) {
+  .Header {
+    font-size: 10px;
+  }
+
+  .mat-table {
+    justify-content: left;
+    width: 120%;
+  } 
+
+  .mat-column-name {
+    font-size: 9px;
+    text-align: left;
+  }
+
+  .mat-column-synonyme {
+    font-size: 9px;
+    text-align: left;
+  }
+
+  .mat-column-kantonName {
+    font-size: 9px;
+    text-align: left;
+  }
+
+  .mat-column-bezeichnung {
+    font-size: 9px;
+    text-align: left;
+  }
+
+  .mat-column-gebaeude {
+    font-size: 9px;
+    text-align: left;
+  }
+
+  .mat-column-kontakts {
+    font-size: 9px;
+    text-align: left;
+  }
+
+  .mat-column-details {
+    font-size: 9px;
+    padding-right: 10px;
+  }
+
+  .mat-column-editierung {
+    display: none;
+  }
+
+  h1 {
+    font-size: 18px;
+    margin-bottom: 0px;
+  }
+
+  .Header {
+    margin-top: 5px;
+    margin-left: 5px;
+}
+}

@@ -1,0 +1,145 @@
+<h1>{{organ.orgelNavigation.gebaeude}}</h1>
+<br>
+<br>
+<div class="buttoncontainer">
+<button type="button" *ngFor="let button of dispo; let i = index"> <a href="http://147.88.61.66/api/Organ/{{dispo[i].id}}">{{dispo[i].massnahme1}} {{dispo[i].year}}</a></button>
+</div>
+<br>
+<figure>
+<div class="Galerie" *ngFor="let entry of organ.media; let i = index">
+    <img src="https://localhost:7205/api/Organ/Medium/{{organ.media[i].id || null}}" width="300">
+    <figcaption> {{organ.media[i].beschreibung}} </figcaption>
+</div>
+<div class="details" *ngIf="organ, dispo">
+    <div class="Standort Table">
+    <h2>{{ 'CONTENTPAGE.PLACE.TITLE' | translate }}</h2>
+    <table>
+<tr>
+    <td><b>{{ 'CONTENTPAGE.PLACE.PLACE' | translate }}:</b></td>
+    <td>{{organ.ortNavigation.plz || 'CONTENTPAGE.NOVALUE' | translate }} {{organ.ortNavigation.name || 'CONTENTPAGE.NOVALUE' | translate }}</td>
+</tr>
+<tr>
+    <td><b>{{ 'CONTENTPAGE.PLACE.KANTON' | translate }}:</b></td>
+    <td>{{organ.ortNavigation.kantonNavigation.name || 'CONTENTPAGE.NOVALUE' | translate }} </td>
+</tr>
+<tr>
+    <td><b>{{ 'CONTENTPAGE.PLACE.BUILDING' | translate }}:</b></td>
+    <td>{{organ.orgelNavigation.gebaeude  || 'CONTENTPAGE.NOVALUE' | translate }}</td>
+</tr>
+<tr>
+    <td><b>{{ 'CONTENTPAGE.PLACE.BUILDINGAREA' | translate }}:</b></td>
+    <td>{{organ.orgelNavigation.gebaeudeteil || 'CONTENTPAGE.NOVALUE' | translate }}</td>
+</tr>
+</table>
+</div>
+    <div class="Personen Table">
+    <h2>{{ 'CONTENTPAGE.PERSON.TITLE' | translate }}</h2>
+    <table>
+        <tr>
+            <td><b>{{ 'CONTENTPAGE.PERSON.BUILDER' | translate }}:</b></td>
+            <td>{{organ?.kontakts[0]?.name || 'CONTENTPAGE.NOVALUE' | translate }}</td>
+        </tr>
+        <tr>
+            <td><b>{{ 'CONTENTPAGE.PERSON.ACTION' | translate }}:</b></td>
+            <td>{{organ?.massnahme1 || 'CONTENTPAGE.NOVALUE' | translate }} </td>
+        </tr>
+        <tr>
+            <td><b>{{ 'CONTENTPAGE.PERSON.DATE' | translate }}:</b></td>
+            <td>{{organ?.massnahmedatumNavigation?.bezeichnung || 'CONTENTPAGE.NOVALUE' | translate }}</td>
+        </tr>
+        </table>
+    </div>
+    <div class="Orgel Table">
+    <h2>{{ 'CONTENTPAGE.ORGAN.TITLE' | translate }}</h2>
+    <table>
+        <tr>
+            <td><b>{{ 'CONTENTPAGE.ORGAN.NUMBERMANUALE' | translate }}: </b></td>
+            <td>{{organ?.anzahlmanuale  || 'CONTENTPAGE.NOVALUE' | translate }}</td>
+        </tr>
+        <tr>
+            <td><b>{{ 'CONTENTPAGE.ORGAN.MANUALSIZE' | translate }}:</b></td>
+            <td *ngIf="organ?.tastenreihes?.length > 0">{{organ?.tastenreihes[0]?.tastenumfang || 'CONTENTPAGE.NOVALUE' | translate }} </td>
+        </tr>
+        <tr>
+            <td><b>{{ 'CONTENTPAGE.ORGAN.PEDALSIZE' | translate }}:</b></td>
+            <td *ngIf="organ?.tastenreihes?.length > 2">{{organ?.tastenreihes[2]?.tastenumfang || 'CONTENTPAGE.NOVALUE' | translate }} </td>
+        </tr>
+        <tr>
+            <td><b>{{ 'CONTENTPAGE.ORGAN.SPIELTRAKTUR' | translate }}:</b></td>
+            <td *ngIf="organ?.tastenreihes?.length > 0">{{organ?.tastenreihes[0]?.spieltraktur || 'CONTENTPAGE.NOVALUE' | translate }} </td>
+        </tr>
+        <tr>
+            <td><b>{{ 'CONTENTPAGE.ORGAN.REGISTER' | translate }}:</b></td>
+            <td *ngIf="organ?.tastenreihes?.length > 0">{{organ?.tastenreihes[0]?.registertraktur || 'CONTENTPAGE.NOVALUE' | translate }} </td>
+        </tr>
+        <tr>
+            <td><b>{{ 'CONTENTPAGE.ORGAN.SPIELHILFEN' | translate }}:</b></td>
+            <td>{{organ?.spielhilfen || 'CONTENTPAGE.NOVALUE' | translate }} </td>
+        </tr>
+        <tr>
+            <td><b>{{ 'CONTENTPAGE.ORGAN.STIMMTONHOEHE' | translate }}:</b></td>
+            <td>{{organ?.stimmtonhoehe || 'CONTENTPAGE.NOVALUE' | translate }} </td>
+        </tr>
+        <tr>
+            <td><b>{{ 'CONTENTPAGE.ORGAN.STIMMUNG' | translate }}:</b></td>
+            <td>{{organ?.temperierung || 'CONTENTPAGE.NOVALUE' | translate }} </td>
+        </tr>
+        <tr>
+            <td><b>{{ 'CONTENTPAGE.ORGAN.BALGANLAGE' | translate }}:</b></td>
+            <td>{{organ?.balganlage || 'CONTENTPAGE.NOVALUE' | translate }} </td>
+        </tr>
+        <tr>
+            <td><b>{{ 'CONTENTPAGE.ORGAN.WINDDRUCK' | translate }}:</b></td>
+            <td>{{organ?.tastenreihes[0]?.werks[0]?.ladens[0]?.winddruck || 'CONTENTPAGE.NOVALUE' | translate }} </td>
+        </tr>
+        <br>
+        <br>
+        <tr>
+            <td><b>{{ 'CONTENTPAGE.ORGAN.COMMENTS' | translate }}:</b></td>
+            <td>{{organ?.kommentar || 'CONTENTPAGE.NOVALUE' | translate }} </td>
+        </tr>
+        </table>
+    </div>
+    <h2>{{ 'CONTENTPAGE.DISPOSITION.TITLE' | translate }}</h2>
+    <div class="Disposition"  *ngFor="let disp of organ?.tastenreihes let i = index">
+    <div class="Untertitel"> <h4> {{organ?.tastenreihes[i]?.name}}</h4> 
+    </div>
+    <div class="Liste" *ngFor="let disp of organ?.tastenreihes[i]?.werks[0]?.ladens[0]?.registers let j = index">
+       <span> <b>{{organ?.tastenreihes[i]?.werks[0]?.ladens[0]?.registers[j]?.name}} {{organ?.tastenreihes[i]?.werks[0]?.ladens[0]?.registers[j]?.tonhoehe}}</b> ({{organ?.tastenreihes[i]?.werks[0]?.ladens[0]?.registers[j]?.material}} {{organ?.tastenreihes[i]?.werks[0]?.ladens[0]?.registers[j]?.kommentar}}) </span>
+    </div>
+    <br>
+    </div>
+    <h2>{{ 'CONTENTPAGE.SOURCES.TITLE' | translate }}</h2>
+    <div class="Quellen"> {{organ?.quellen}} <br><br>{{organ?.literaturMassnahmes[0]?.literaturNavigation?.titel}} 
+        <br>{{organ?.literaturMassnahmes[0]?.literaturNavigation?.biblAngaben}}<br> {{organ?.literaturMassnahmes[0]?.seitenangabe}} 
+    </div>
+    <br>
+    <div class="Orgelgeschichte Table">
+    <h2>{{ 'CONTENTPAGE.HISTORY.TITLE' | translate }}</h2>
+    <table id="history">
+        <tr *ngFor="let entry of history; let i = index">
+            <td><b>{{history[i]?.massnahmedatum}}</b></td>
+            <td>{{history[i]?.massnahme1}}, {{history[i]?.kontakts[0]?.name}} </td>
+            <td><a href="http://147.88.61.66/organ/{{history[i].id}}">{{ 'CONTENTPAGE.HISTORY.DETAILS' | translate }}</a> </td>
+        </tr>
+    </table>
+    </div>
+    <br>
+    <h2>QR-Code</h2>
+    <div class="qrcodeImage">
+        <qrcode
+          [qrdata]="URL"
+          [allowEmptyString]="true"
+          [ariaLabel]="'Orgel-Link zur Detailseite'"
+          [cssClass]="'center'"
+    [colorDark]="'#000000ff'"
+    [colorLight]="'#ffffffff'"
+    [elementType]="'canvas'"
+    [errorCorrectionLevel]="'M'"
+    [margin]="4"
+    [scale]="1"
+    [title]="'Orgel QR Code'"
+    [width]="150"
+    [qrCodeURL]="URL">
+   </qrcode>
+</div>

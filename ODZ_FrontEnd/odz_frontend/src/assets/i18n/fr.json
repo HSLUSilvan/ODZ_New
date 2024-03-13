@@ -1,0 +1,125 @@
+{
+    "NAVIGATION": {
+        "HOME": "page d'accueil",
+        "SEARCH": "recherche orgues",
+        "PERSONSEARCH": "recherche facteurs d'orgues",
+        "MAPSEARCH": "recherche à partir de la carte",
+        "COMBINEDSEARCH": "recherche combinée",
+        "LANGUAGE": "langue"
+    },
+
+    "HOME": {
+        "TITLE": "La base de données du Centre d’Etudes sur l’Orgue (ODZ) de la Haute École de musique de Lucerne.",
+        "PARAGRAPH01": "La base de données de l'ODZ a pour but de réunir toutes les informations disponibles relatives aux orgues de Suisse : elle offre ainsi de nombreux renseignements concernant leur histoire, leurs caractéristiques techniques et les artisans qui y ont travaillé, cela aussi bien au travers des publications existantes qu’à partir des nouvelles recherches effectuées dans les archives.",
+        "PARAGRAPH02": "Cette banque de données à été élaborée à l'origine sous la direction du Professeur Thomas Olnhoff (Haute École de Lucerne, département Technique et Architecture). Les deux étudiants en Master Carli Beeli et Roland Rogenmoser ont établi la version de base dans le cadre d'un travail de maitrise. Les adaptations requises à la programmation ont été réalisées par le Professeur Olnhoff lui-même. La banque de données est consultable sur un serveur MySql version 5.1. En ce moment, des travaux exploratoires sont en cours pour adapter la banque de données actuelle et les applications à l'évolution technologique des dernières années et la rendre encore plus efficiente pour permettre aux usagers un accès élargi. Une première étape est constituée par les travaux (déjà achevés) dans le cadre d'un projet en économie (mémoire de fin de semestre) des étudiants Robin Bucher et Elia Grifo sous la direction de l'ingénieur informatique diplômé (dipl. Inf. Ing.) Bruno Joho (Haute École de Lucerne, département Informatique). Ces travaux fraient de nouvelles voies pour élargir les contenus et l'accès aux informations. Dans les mois qui suivent, les résultats seront numérisés et implémentés. Comme avant, Stefan Jaeger assure le suivi des caches de recherche existants qu'il avait développés à la suite de ses études à la Haute École de Lucerne (département Technique et Architecture).",
+        "PARAGRAPH03": "Grâce à des travaux de recherche personnels ainsi qu’à des informations provenant d’autres sources qui nous ont été aimablement communiquées sont d’ores et déjà accessibles dans la présente banque de données plus de 26 000 rubriques intégrant des renseignements exhaustifs sur plus de 900 instruments encore existants. Parmi ces rubriques, on trouve quelque 4 500 fichiers concernant les dispositions des orgues et environ 8 000 schémas ou photos. Outre ces rubriques qui fournissent des informations historiques et techniques, 1 500 entrées concernent la biographie des facteurs d’orgue, des organistes et des experts. Nous exprimons ici notre gratitude en particulier à M. Peter Fasler (Bâle) et à la Manufacture d’orgues Kuhn SA (Männedorf) qui nous ont communiqué tous les éléments en leur possession.",
+        "PARAGRAPH04": "D'autres personnes ont fourni gratuitement des données à l'ODZ : Dr Georg Carlen (Lucerne), Bruno Eberhard (Soleure), Georges Enz (Sachseln), Lauro Filipponi (Gordevio), Urs Fischer (Ebikon), Dr Josef Grünenfelder (Zoug), Hans Hauenstein (Emmenbrücke), Dora Hegg (Berne), Simon Hebeisen (Lucerne), Marina Jahn (Lugano), Dr Friedrich Jakob (Uetikon am See), Jürg Johner (Cham), Otto Lustenberger († 2020, Lucerne), Dr Mario Manzin (Milano/Italien), Maria Teresa und Andrea Mascioni (Azzio/Italie), Heinrich Meier (Tägerig), Martino Milani (Locarno), Kurt Müller († 2011, Altdorf), Daniel Pürro (Willisau), Wolfgang Rehn (Oetwil am See), Charles-André Schleppy (La Chaux-de-Fonds), Mario Schwaller (Massagno), Hans Spielmann (Oberkirch), Dr Herbert Ulrich (Luzern), Dieter Utz (Männedorf), Edmond Voeffray (Martigny), Ulrich Wetter (Muttenz), Dr François Widmer (Grandvaux), Rudolf Wyss (Rothenburg). Qu'elles en soient chaleureusement remerciées.",
+        "PARAGRAPH05": "Il convient aussi de saluer d’une manière toute particulière les manufactures d’orgues qui ont généreusement et gracieusement ouvert leurs archives pour faciliter les activités de recherches de l’ODZ, à savoir : Erni (Stans), Füglister (Grimisuat) Goll (Lucerne), Graf (Sursee), Hauser (Kleindöttingen), Kuhn (Männedorf), Mascioni (Azzio/Italie), Mathis (Näfels), Metzler (Dietikon), Pürro (Willisau), Späth (Rüti).",
+        "PARAGRAPH06": "Le travail est effectué canton par canton. En ce moment, les orgues des cantons de Lucerne, Nidwalden, Obwalden, Schwyz, Solothurn, Tessin, Uri et Zug sont prêtes à être utilisées. Une actualisation des informations sur les orgues dans les cantons de Tessin (Ticino) et d'Uri est en cours d'élaboration. Les fichiers de données importés devant être corrigés, harmonisés et complétés, seuls ceux déjà traités sont accessibles aux usagers.",
+        "PARAGRAPH07": "La structure de la base de données réserve une rubrique particulière à chaque événement dans l'histoire d'un instrument (construction, réfections, modifications, devis, etc.). La consultation en ligne permet d'accéder, pour chaque orgue, à la rubrique concernant son état actuel (constructeur, composition des jeux, illustrations, etc.). L'historique de l'instrument n'est indiqué que de manière sommaire. Comme le module de recherche ne rend compte que partiellement des informations disponibles dans la base de données, il est possible d'obtenir des indications complémentaires directement auprès de l'ODZ. En outre, le Centre de documentation recueillera avec intérêt toute correction ou information complémentaire que les internautes pourront lui communiquer et il remercie par avance tous ceux qui voudront bien ainsi enrichir la documentation.",
+        "PARAGRAPH08": "Dr Marco Brandazza, directeur du Centre d’Etudes sur l’Orgue"
+    },
+
+    "SEARCH": {
+        "TITLE": "Recherche orgues",
+        "TITLEBUILDER": "Recherche facteurs d'orgues",
+        "PARAGRAPH": "N'importe quel organe peut être recherché sur cette page. Le terme de recherche saisi inclut toutes les colonnes.",
+        "PARAGRAPH02": "Pour l'instant ne sont disponibles que les informations relatives aux Cantons de Lucerne, Nidwald, Obwald, Soleure, Tessin, Uri et Zoug.",
+        "SEARCHHELP": "donner un mot de recherche",
+        "PLACE": "Lieu",
+        "KANTON": "Canton",
+        "DATE": "Date",
+        "BUILDING": "Édifice",
+        "BUILDER": "Facteur d'orgues",
+        "DETAILS": "Details",
+        "NOVALUE": "pas de information"
+    },
+
+    "MAPSEARCH": {
+        "TITLE": "Recherche à partir de la carte",
+        "PARAGRAPH": "Sur cette page, les organes peuvent être recherchés sur une carte.",
+        "SEARCHHELP": "donner un mot de recherche",
+        "SEARCHBUTTON": "recherche",
+        "RESETBUTTON": "réinitialiser",
+        "PLACE": "Lieu",
+        "BUILDING": "Édifice",
+        "BUILDINGAREA": "Partie de l'édifice",
+        "DETAILS": "Details"
+    },
+    
+    "COMBINEDSEARCH": {
+        "TITLE": "recherche combinée",
+        "MENUCANTON": {
+            "TITLE": "Canton",
+            "CANTON01": "Lucerne",
+            "CANTON02": "Nidwald",
+            "CANTON03": "Obwald",
+            "CANTON04": "Schwytz",
+            "CANTON05": "Soleure",
+            "CANTON06": "Tessin",
+            "CANTON07": "Uri",
+            "CANTON08": "Zoug"
+        },
+        "MENUPLACE": {
+            "TITLE": "Lieu"
+        },
+        "MENUDATE": {
+            "TITLE": "Date",
+            "FROM": "à partir de l'année",
+            "TO": "jusqu'en"
+        },
+        "MENUMASSNAHME": {
+            "TITLE": "Intervention",
+            "INCLUDED": "mesures prises en compte",
+            "NOTINCLUDED": "mesures non prises en compte"
+        },
+        "MENUEXPERT": {
+            "TITLE": "Facteur d'orgues/Expert"
+        }
+    },
+
+    "CONTENTPAGE": {
+        "NOVALUE": "",
+        "PLACE": {
+            "TITLE": "Lieu",
+            "PLACE": "Lieu",
+            "KANTON": "Canton",
+            "BUILDING": "Édifice",
+            "BUILDINGAREA": "Partie de l'édifice"
+        },
+        "PERSON": {
+            "TITLE": "Personnes",
+            "BUILDER": "Facteur d'orgues/Expert",
+            "ACTION": "Intervention",
+            "DATE": "Date"
+        },
+
+        "ORGAN": {
+            "TITLE": "Orgue",
+            "NUMBERMANUALE": "Nombre de claviers manuels",
+            "MANUALSIZE": "Étendue des claviers manuels",
+            "PEDALSIZE": "Étendue du pédalier",
+            "SPIELTRAKTUR": "Traction des notes",
+            "REGISTER": "Tirage des jeux",
+            "SPIELHILFEN": "Accessoires",
+            "STIMMTONHOEHE": "Diapason",
+            "STIMMUNG": "Tempérament",
+            "BALGANLAGE": "Dispositif des soufflets",
+            "WINDDRUCK": "Pression en mm d'eau",
+            "COMMENTS": "Commentaires"
+        },
+
+        "DISPOSITION": {
+            "TITLE": "Composition des jeux"
+        },
+
+        "SOURCES": {
+            "TITLE": "Sources et bibliographie"
+        },
+
+        "HISTORY": {
+            "TITLE": "Histoire de l'orgue",
+            "DETAILS": "Details"
+        }
+    }
+}

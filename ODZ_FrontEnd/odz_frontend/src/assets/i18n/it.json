@@ -1,0 +1,125 @@
+{
+    "NAVIGATION": {
+        "HOME": "pagina iniziale",
+        "SEARCH": "alla ricerca organi",
+        "PERSONSEARCH": "alla ricerca organari",
+        "MAPSEARCH": "ricerca sulla mappa",
+        "COMBINEDSEARCH": "ricerca combinata",
+        "LANGUAGE": "lingua"
+    },
+
+    "HOME": {
+        "TITLE": "La banca dati del Centro di Documentazione Organologica della Scuola Superiore di Lucerna – Musica",
+        "PARAGRAPH01": "La banca dati creata presso il Centro di Documentazione Organologica (ODZ) ha lo scopo di raccogliere tutte le informazioni storiche e tecniche sugli organi conservati entro il territorio svizzero e sui loro costruttori. Questo avviene attraverso lo spoglio delle pubblicazioni già esistenti come pure con specifiche ricerche d’archivio che saranno effettuate in futuro.",
+        "PARAGRAPH02": "La banca dati è stata sviluppata inizialmente sotto la direzione del Dott. Prof. Thomas Olnhoff (Scuola Superiore di Lucerna – Tecnica e Architettura). Due studenti, Carli Beeli e Roland Rogenmoser, hanno realizzato la versione di base nell’ambito della loro tesi di diploma. Le necessarie integrazioni della programmazione sono state portate a termine dal Prof. Olnhoff personalmente. La presente banca dati funziona su un MySql-Server Versione 5.1. Attualmente si sta lavorando per un aggiornamento della banca dati e delle sue applicazioni sulla base degli sviluppi tecnologici recenti per arrivare ad offrire una base migliore e più agile, adattabile per ulteriori possibilità di utilizzo. Un primo passo in tale direzione sono i lavori già realizzati all’interno di un progetto di informatica economica (tesi semestrale) dagli studenti Robin Bucher e Elia Grifo sotto la guida del dipl. Inf. Ing. Bruno Joho (Scuola Superiore di Lucerna - Informatica) che sta esplorand nuove strade per l’ampliamento dei contenuti e la loro possibilità di ricerca. Nei prossimi mesi si darà avvio ai lavori di applicazione pratica e implementazione dei risultati. Come in precedenza le pagine di ricerca sono tenute aggiornate da Stefan Jäger, che le aveva realizzate come diplomando presso la Scuola Superiore di Lucerna – Tecnica e Architettura.",
+        "PARAGRAPH03": "Grazie a progetti eseguiti all’interno dell’ODZ e alla disponibilità di diverse persone, nella banca dati sono già presenti oltre 26'000 oggetti (record) con ampie informazioni su oltre 900 organi ancora esistenti. In più sono presenti in ca. 4'500 oggetti le rispettive disposizioni e circa 8'000 fotografie. Oltre a questi oggetti che riportano dati sulla storia dei rispettivi organi sono presenti nella banca dati ca. 1'500 oggetti (record) con informazioni su organari, organisti e consulenti. A questo riguardo dobbiamo un cordiale ringraziamento al signor Peter Fasler (Basilea) e alla ditta Orgelbau Kuhn AG (Männedorf) che hanno messo a disposizione gratuita le loro banche dati.",
+        "PARAGRAPH04": "Un grazie va anche a persone che hanno fornito all’ODZ gratuitamente nuovi dati: Dott. Georg Carlen (Lucerna), Bruno Eberhard (Soletta), Georges Enz (Sachseln), Lauro Filipponi (Gordevio), Urs Fischer (Ebikon), Dott. Josef Grünenfelder (Zugo), Hans Hauenstein (Emmenbrücke), Dora Hegg (Berna), Simon Hebeisen (Lucerna), Marina Jahn (Lugano), Dott. Friedrich Jakob (Uetikon am See), Jürg Johner (Cham), Otto Lustenberger († 2020, Lucerna), Dott. Mario Manzin (Milano/Italien), Maria Teresa und Andrea Mascioni (Azzio/Varese), Heinrich Meier (Tägerig), Martino Milani (Locarno), Kurt Müller († 2011, Altdorf), Daniel Pürro (Willisau), Wolfgang Rehn (Oetwil am See), Charles-André Schleppy (La Chaux-de-Fonds), Mario Schwaller (Massagno), Hans Spielmann (Oberkirch), Dott. Herbert Ulrich (Lucerna), Dieter Utz (Männedorf), Edmond Voeffray (Martigny), Ulrich Wetter (Muttenz), Dott. François Widmer (Grandvaux), Rudolf Wyss (Rothenburg).",
+        "PARAGRAPH05": "Alle ditte organarie, che spontaneamente e in modo generoso hanno aperto i loro archivi al lavoro di ricerca dell‘ODZ va un ringraziamento speciale: Erni (Stans), Füglister (Grimisuat), Goll (Lucerna), Graf (Sursee), Hauser (Kleindöttingen), Kuhn (Männedorf), Mascioni (Azzio/Varese), Mathis (Näfels), Metzler (Dietikon), Pürro (Willisau), Späth (Rüti).",
+        "PARAGRAPH06": "Dato che gli oggetti importati devono essere corretti, armonizzati e completati, è possibile richiamare solo quelli già elaborati. Tale lavoro è svolto cantone per cantone. A tutt’oggi sono a disposizione solamente le informazioni sugli organi dei cantoni di Lucerna, Nidwaldo, Obvaldo, Soletta, Svitto, Ticino, Uri e Zug. E’ in atto il completamento delle informazioni dei cantoni Ticino e Uri.",
+        "PARAGRAPH07": "Per quello che riguarda il contenuto della banca dati, si è deciso di raccogliere in diversi oggetti, uno per ogni evento nella vita di uno strumento, tutte le informazioni riguardanti gli interventi effettuati sullo stesso. Le informazioni disponibili al pubblico rappresentano però solamente una scelta tra tutte quelle contenute nella banca dati. Per ogni organo viene visualizzata la situazione attuale: costruttore, disposizione, fotografie, ecc. Altri dati possono essere direttamente richiesti all’ODZ, che a sua volta sarà grato di ricevere ogni tipo di correzione o d’integrazione.",
+        "PARAGRAPH08": "Dott. Marco Brandazza, Responsabile dell’ODZ"
+    },
+
+    "SEARCH": {
+        "TITLE": "Alla ricerca organi",
+        "TITLEBUILDER": "Alla ricerca organari",
+        "PARAGRAPH": "Qualsiasi organo può essere cercato in questa pagina. Il termine di ricerca immesso include tutte le colonne.",
+        "PARAGRAPH02": "Attualmente sono disponibili informazioni solo per i cantoni di Lucerna, Nidwaldo, Obvaldo, Soletta, Ticino, Uri e Zug.",
+        "SEARCHHELP": "Inserisci un termine di ricerca",
+        "PLACE": "Località",
+        "KANTON": "Cantone",
+        "DATE": "Data",
+        "BUILDING": "Edificio",
+        "BUILDER": "Organaro",
+        "DETAILS": "Details",
+        "NOVALUE": "nessuna informazione"
+    },
+
+    "MAPSEARCH": {
+        "TITLE": "Ricerca sulla mappa",
+        "PARAGRAPH": "In questa pagina è possibile cercare gli organi su una mappa.",
+        "SEARCHHELP": "Inserisci un termine di ricerca",
+        "SEARCHBUTTON": "ricercare",
+        "RESETBUTTON": "risedersi",
+        "PLACE": "Località",
+        "BUILDING": "Edificio",
+        "BUILDINGAREA": "Parte dell’edificio",
+        "DETAILS": "Details"
+    },
+    
+    "COMBINEDSEARCH": {
+        "TITLE": "ricerca combinata",
+        "MENUCANTON": {
+            "TITLE": "Cantone",
+            "CANTON01": "Lucerna",
+            "CANTON02": "Nidvaldo",
+            "CANTON03": "Obvaldo",
+            "CANTON04": "Svitto",
+            "CANTON05": "Soletta",
+            "CANTON06": "Ticino",
+            "CANTON07": "Uri",
+            "CANTON08": "Zugo"
+        },
+        "MENUPLACE": {
+            "TITLE": "Località"
+        },
+        "MENUDATE": {
+            "TITLE": "Dato",
+            "FROM": "dall’anno",
+            "TO": "all’anno"
+        },
+        "MENUMASSNAHME": {
+            "TITLE": "Tipo d’intervento",
+            "INCLUDED": "interventi presi in considerazione",
+            "NOTINCLUDED": "interventi non presi in considerazione"
+        },
+        "MENUEXPERT": {
+            "TITLE": "Organaro/Consulente"
+        }
+    },
+
+    "CONTENTPAGE": {
+        "NOVALUE": "",
+        "PLACE": {
+            "TITLE": "Località",
+            "PLACE": "Località",
+            "KANTON": "Cantone",
+            "BUILDING": "Edificio",
+            "BUILDINGAREA": "Parte dell’edificio"
+        },
+        "PERSON": {
+            "TITLE": "Persone",
+            "BUILDER": "Organaro/Consulente",
+            "ACTION": "Tipo d’intervento",
+            "DATE": "Data"
+        },
+
+        "ORGAN": {
+            "TITLE": "Organo",
+            "NUMBERMANUALE": "Numero di tastiere",
+            "MANUALSIZE": "Estensione dei manuali",
+            "PEDALSIZE": "Estensione della pedaliera",
+            "SPIELTRAKTUR": "Trasmissione dei tasti",
+            "REGISTER": "Trasmissione dei registri",
+            "SPIELHILFEN": "Accessori",
+            "STIMMTONHOEHE": "Corista",
+            "STIMMUNG": "Temperamento",
+            "BALGANLAGE": "Manticeria",
+            "WINDDRUCK": "Pressione del vento in mm",
+            "COMMENTS": "Commento"
+        },
+
+        "DISPOSITION": {
+            "TITLE": "Disposizione"
+        },
+
+        "SOURCES": {
+            "TITLE": "Fonti e bibliografia"
+        },
+
+        "HISTORY": {
+            "TITLE": "Storia dell’organo",
+            "DETAILS": "Details"
+        }
+    }
+}

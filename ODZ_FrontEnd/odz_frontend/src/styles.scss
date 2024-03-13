@@ -1,0 +1,17 @@
+html, body {height: 100%}
+body {
+  --primary-color: #78d0cf;
+  --background-main: #fff;
+  --background-scondary: #000;
+  --secondary-color: rgb(19, 2, 54);
+  --primary-shadow: #000;
+
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: var(--background-main);
+}
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

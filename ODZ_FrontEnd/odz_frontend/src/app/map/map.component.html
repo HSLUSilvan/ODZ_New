@@ -1,0 +1,15 @@
+<h1>{{ 'MAPSEARCH.TITLE' | translate }}</h1>
+<p>
+  {{ 'MAPSEARCH.PARAGRAPH' | translate }}
+</p>
+<p>
+  {{ 'SEARCH.PARAGRAPH02' | translate }}
+</p>
+<mat-form-field appearance="standard">
+  <mat-label>{{ 'MAPSEARCH.SEARCHHELP' | translate }}</mat-label>
+  <input matInput type="text" [(ngModel)]="term" placeholder="Jesuitenkirche">
+</mat-form-field>
+<button (keyup.enter)="FilterMarkers()" (click)="FilterMarkers()">{{ 'MAPSEARCH.SEARCHBUTTON' | translate }}</button>
+<button (click)="ResetMarkers()">{{ 'MAPSEARCH.RESETBUTTON' | translate }}</button>
+<div class="full" id="map">
+</div>

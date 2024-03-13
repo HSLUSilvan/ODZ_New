@@ -1,0 +1,50 @@
+<div class="Header">
+  <h3>Benutzersuche</h3>
+  <mat-form-field appearance="standard">
+    <mat-label>Suchbegriff eingeben</mat-label>
+    <input matInput type="text" (keyup)="applyFilter($event.target.value)" #input placeholder="Marco Brandazza">
+  </mat-form-field>
+  
+  
+    <table mat-table matSort  [dataSource]="dataSource3" class="mat-elevation-z8">
+  
+      <!-- Position Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Ort-ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.id|| "Keine Angabe"}}</td>
+      </ng-container>
+    
+      <!-- Name Column -->
+       <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name|| "Keine Angabe" }} </td>
+      </ng-container>
+    
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="auswahl">
+        <th mat-header-cell  *matHeaderCellDef> Auswahl </th>
+        <td mat-cell *matCellDef="let element">     <button mat-button [mat-dialog-close]="element.id" cdkFocusInitial>Auswählen</button> </td>
+      </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+    </table>  
+    <br>
+  <mat-paginator #paginator
+                [length]= "10"
+                [pageSize]="8"
+                [pageSizeOptions]="[4, 8]">
+  </mat-paginator>
+  
+  <div *ngIf="pageEvent">
+    <h5>Page Change Event Properties</h5>
+    <div>List length: {{pageEvent.length}}</div>
+    <div>Page size: {{pageEvent.pageSize}}</div>
+    <div>Page index: {{pageEvent.pageIndex}}</div>
+  </div>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Abbrechen</button>
+  </div>
+  

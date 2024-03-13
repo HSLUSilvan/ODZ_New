@@ -1,0 +1,132 @@
+/* HeroDetailComponent's private CSS styles */
+label {
+    color: #435960;
+    font-weight: bold;
+  }
+  input {
+    font-size: 1em;
+    padding: .5rem;
+  }
+  .buttoncontainer {
+    width: 50%;
+
+    button {
+      margin-left: 15px;
+      margin-bottom: 10px;
+      background-color: rgb(102, 107, 190);
+      border-radius: 20px;
+      border-style: groove;
+      border-color: rgb(4, 7, 96);
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #fdfeff;
+    }
+  
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  }
+
+  
+  .button:disabled {
+    background-color: #eee;
+    color: #ccc;
+    cursor: auto;
+  }
+  
+.details{
+  margin-left: 40px;
+  width: 50%;
+}
+
+.Links {
+  border: 1px solid blue ;
+}
+
+.Galerie {
+  float: right;
+  margin-left: 150px;
+  width:50%;
+  text-align:center;
+}
+
+.Quellen {
+  white-space: pre-line;
+}
+
+td {
+  width: 300px;
+  vertical-align: top;
+    text-align: left;
+}
+
+/* The div container */
+.qrcodeImage {
+  display: flex;
+  flex: 1;
+}
+
+/* Add custom styles here */
+.center {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+
+  h1 {
+    font-size: 18px;
+    margin-bottom: 0px;
+  }
+
+  h2 {
+    font-size: 16px;
+    margin-top: 50px;
+    margin-bottom: 5px;
+  }
+
+
+  .details{
+    margin-left: 5px;
+    margin-right: 0px;
+    width: 50%;
+    font-size: 12px;
+  }
+
+  .Galerie {
+    float: right;
+    margin-left: 1px;
+    width: 50%;
+    text-align: left;
+    font-size: 12px;
+  }
+
+  img {
+    width: 180px;
+    height: 180px;
+  }
+
+  figcaption {
+    width: 180px;
+  }
+
+  td {
+    vertical-align: top;
+    text-align: left;
+  }
+
+  .buttoncontainer {
+    width: 100%;
+
+    button {
+      margin-left: 8px;
+      margin-bottom: 5px;
+      border-radius: 10px;
+      font-size: 10px;
+    }
+  }
+  }

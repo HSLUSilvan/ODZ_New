@@ -1,0 +1,73 @@
+<div class="Header">
+<h1>{{ 'SEARCH.TITLEBUILDER' | translate }}</h1>
+<br>
+<p>
+  {{ 'SEARCH.PARAGRAPH' | translate }}
+</p>
+<br>
+<p>
+  {{ 'SEARCH.PARAGRAPH02' | translate }}
+</p>
+<mat-form-field appearance="standard">
+  <mat-label>{{ 'SEARCH.SEARCHHELP' | translate }}</mat-label>
+  <input matInput type="text" (keyup)="applyFilter($event.target.value)" #input placeholder="Hochschule Luzern">
+</mat-form-field>
+
+
+<table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)" class="mat-elevation-z8">
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="kontakts">
+      <th mat-header-cell  *matHeaderCellDef> {{ 'SEARCH.BUILDER' | translate }} </th>
+      <td mat-cell *matCellDef="let element"> {{element.kontakts[0].name }} {{element.kontakts[0].vorname || ""}}</td>
+    </ng-container>
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sortieren nach Ort"> {{ 'SEARCH.PLACE' | translate }} </th>
+      <td mat-cell *matCellDef="let element"> {{element.name }} {{element.plz}}</td>
+    </ng-container>
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="kantonName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sortieren nach Kanton"> {{ 'SEARCH.KANTON' | translate }} </th>
+      <td mat-cell *matCellDef="let element">  {{element.kantonName}}</td>
+    </ng-container>
+  
+    <!-- Name Column -->
+     <ng-container matColumnDef="bezeichnung">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sortieren nach Datum"> {{ 'SEARCH.DATE' | translate }} </th>
+      <td mat-cell *matCellDef="let element"> {{element.bezeichnung}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="gebaeude">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sortieren nach Gebäude"> {{ 'SEARCH.BUILDING' | translate }} </th>
+      <td mat-cell *matCellDef="let element"> {{element.gebaeude }}, {{element.orgelbezeichnung }} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="details">
+      <th mat-header-cell *matHeaderCellDef> {{ 'SEARCH.DETAILS' | translate }} </th>
+      <td mat-cell *matCellDef="let element"> <a [routerLink]="['/organ', element.id]">{{ 'SEARCH.DETAILS' | translate }}</a></td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>  
+  <br>
+  <br>
+<mat-paginator #paginator
+              [length]= "10"
+              [pageSize]="30"
+              [pageSizeOptions]="[5, 10, 25, 100]">
+</mat-paginator>
+
+<div *ngIf="pageEvent">
+  <h5>Page Change Event Properties</h5>
+  <div>List length: {{pageEvent.length}}</div>
+  <div>Page size: {{pageEvent.pageSize}}</div>
+  <div>Page index: {{pageEvent.pageIndex}}</div>
+</div>
+</div>

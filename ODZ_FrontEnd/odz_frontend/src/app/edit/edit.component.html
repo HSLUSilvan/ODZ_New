@@ -1,0 +1,1358 @@
+<div class="container" style="height:100%">
+    <h1>Orgel-Editierung</h1>
+    <div class="Form Orgel ID">
+        <label for="text-1661203032793" class="formbuilder-text-label">Massnahme-ID</label>
+        <input [(ngModel)]="model.name" type="text" class="form-control" name="text-1661203032793" access="false"
+            id="text-1661203032793" placeholder="Massnahme-ID eingeben...">
+        <button (click)="onSearch(model.name)">Suchen</button>
+    </div>
+    <br>
+    <div class="tabbed">
+        <input type="radio" id="tab1" name="css-tabs" checked>
+        <input type="radio" id="tab2" name="css-tabs">
+        <input type="radio" id="tab3" name="css-tabs">
+        <input type="radio" id="tab4" name="css-tabs">
+        <input type="radio" id="tab5" name="css-tabs">
+        <input type="radio" id="tab6" name="css-tabs">
+        <input type="radio" id="tab7" name="css-tabs">
+
+        <ul class="tabs">
+            <li class="tab"><label for="tab1">Orgel</label></li>
+            <li class="tab"><label for="tab2">Kontakte</label></li>
+            <li class="tab"><label for="tab3">Tastenreihen</label></li>
+            <li class="tab"><label for="tab4">Werke</label></li>
+            <li class="tab"><label for="tab5">Laden</label></li>
+            <li class="tab"><label for="tab6">Register</label></li>
+            <li class="tab"><label for="tab7">Medien</label></li>
+        </ul>
+
+        <div class="tab-content">
+            <h1>Orgel</h1>
+            <form [formGroup]="orgelForm">
+                <table>
+                    <tr>
+                        <td>
+                            <div class="Form Orgel">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Orgel-ID</label>
+                                <input formControlName="orgelid" type="text" class="form-control"
+                                    value="{{massnahme.orgelNavigation.id|| ''}}">
+                                <span class="text-danger"
+                                    *ngIf="orgelForm.controls['orgelid'].dirty && orgelForm.hasError('required','orgelid')">*Pflichtfeld</span>
+                                <span class="text-danger"
+                                    *ngIf="orgelForm.controls['orgelid'].dirty && orgelForm.hasError('pattern','orgelid')">*Dieses
+                                    Feld darf nur aus Zahlen bestehen</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Orgel">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Orgelnummer</label>
+                                <input formControlName="orgelnummer" type="text" class="form-control"
+                                    value="{{massnahme.orgelNavigation.orgelnummer|| ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Orgel">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Bezeichnung</label>
+                                <input formControlName="bezeichnung" type="text" class="form-control"
+                                    value="{{massnahme.orgelNavigation.bezeichnung|| ''}}">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="Form Orgel">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Neubaudatum</label>
+                                <input formControlName="neubaudatum" type="text" class="form-control"
+                                    value="{{massnahme.orgelNavigation.neubaudatum|| ''}}">
+                                <span class="text-danger"
+                                    *ngIf="orgelForm.controls['neubaudatum'].dirty && orgelForm.hasError('required','neubaudatum')">*Pflichtfeld</span>
+                                <span class="text-danger"
+                                    *ngIf="orgelForm.controls['neubaudatum'].dirty && orgelForm.hasError('pattern','nuebaudatum')">*Dieses
+                                    Feld darf nur aus Zahlen bestehen.</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Orgel">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Ist sichtbar</label>
+                                <input formControlName="istsichbar" type="text" class="form-control"
+                                    value="{{massnahme.orgelNavigation.istsichbar || ''}}">
+                                <span class="text-danger"
+                                    *ngIf="orgelForm.controls['istsichbar'].dirty && orgelForm.hasError('required','istischbar')">*Pflichtfeld</span>
+                                <span class="text-danger"
+                                    *ngIf="orgelForm.controls['istsichbar'].dirty && orgelForm.hasError('pattern','istsichbar')">*Dieses
+                                    Feld darf nur eine 1 oder 0 enthalten.</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Orgel">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Ort</label>
+                                <input formControlName="ort" type="text" class="form-control"
+                                    value="{{massnahme.orgelNavigation.ort || ''}}">
+                                <span class="text-danger"
+                                    *ngIf="orgelForm.controls['ort'].dirty && orgelForm.hasError('required','ort')">*Pflichtfeld</span>
+                                <span class="text-danger"
+                                    *ngIf="orgelForm.controls['ort'].dirty && orgelForm.hasError('pattern','ort')">*Dieses
+                                    Feld
+                                    darf nur aus Zahlen bestehen</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="dialog button">
+                                <button mat-raised-button (click)="openDialogDatumNeubau()">Datum auswählen</button>
+                            </div>
+                        </td>
+                        <td>
+
+                        </td>
+                        <td>
+                            <div class="dialog button">
+                                <button mat-raised-button (click)="openDialogOrt()">Ort auswählen</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="Form Orgel">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Gemeinde</label>
+                                <input formControlName="gemeinde" type="text" class="form-control" access="false"
+                                    value="{{massnahme.orgelNavigation.gemeinde || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Orgel">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Ortsteil</label>
+                                <input formControlName="ortsteil" type="text" class="form-control" access="false"
+                                    value="{{massnahme.orgelNavigation.ortsteil|| ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Orgel">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Adresse</label>
+                                <input formControlName="adresse" type="text" class="form-control" access="false"
+                                    value="{{massnahme.orgelNavigation.adresse || ''}}">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="Form Orgel">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Gebäude</label>
+                                <input formControlName="gebäude" type="text" class="form-control" access="false"
+                                    value="{{massnahme.orgelNavigation.gebaeude || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Orgel">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Gebäudeteil</label>
+                                <input formControlName="gebäudeteil" type="text" class="form-control" access="false"
+                                    value="{{massnahme.orgelNavigation.gebaeudeteil || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Orgel">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Pfarre</label>
+                                <input formControlName="pfarre" type="text" class="form-control" access="false"
+                                    value="{{massnahme.orgelNavigation.pfarre || ''}}">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="Form Orgel">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Konfession</label>
+                                <input formControlName="konfession" type="text" class="form-control" access="false"
+                                    value="{{massnahme.orgelNavigation.konfession || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Orgel">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Datum Gebäude</label>
+                                <input formControlName="datumgebäude" type="text" class="form-control" access="false"
+                                    value="{{massnahme.orgelNavigation.datumbaugebaude || ''}}">
+                                <span class="text-danger"
+                                    *ngIf="orgelForm.controls['datumgebäude'].dirty && orgelForm.hasError('required','datumgebäude')">*Pflichtfeld</span>
+                                <span class="text-danger"
+                                    *ngIf="orgelForm.controls['datumgebäude'].dirty && orgelForm.hasError('pattern','datumgebäude')">*Dieses
+                                    Feld darf nur aus Zahlen bestehen</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Orgel">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Eigentümer</label>
+                                <input formControlName="eigentümer" type="text" class="form-control" access="false"
+                                    value="{{massnahme.orgelNavigation.eigentuemer || ''}}">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                        </td>
+                        <td>
+                            <div class="dialog button">
+                                <button mat-raised-button (click)="openDialogDatumGeb()">Datum auswählen</button>
+                            </div>
+                        </td>
+                        <td>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="Form Orgel">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Orgel Erhalten?</label>
+                                <input formControlName="orgelerhalten" type="text" class="form-control" access="false"
+                                    value="{{massnahme.orgelNavigation.orgelerhalten || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Orgel">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Latitude</label>
+                                <input formControlName="latitude" type="text" class="form-control" access="false"
+                                    value="{{massnahme.orgelNavigation.latitude || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Orgel">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Longitude</label>
+                                <input formControlName="longitude" type="text" class="form-control" access="false"
+                                    value="{{massnahme.orgelNavigation.longitude || ''}}">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="Form Orgel">
+                                <label for="text-1661203032793" class="formbuilder-text-label">ID Orgel vorher</label>
+                                <input formControlName="idorgelvorher" type="text" class="form-control" access="false"
+                                    value="{{massnahme.orgelNavigation.idorgelvorher || ''}}">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            <br>
+        </div>
+        <div class="tab-content">
+            <h1>Kontakte</h1>
+            <form [formGroup]="kontaktForm">
+                <table>
+                    <tr>
+                        <td>
+                            <div class="Form Kontakte">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Kontakt-ID</label>
+                                <input formControlName="id" type="text" class="form-control" access="false"
+                                    value="{{massnahme.kontakts[0].id || ''}}">
+                                <span class="text-danger"
+                                    *ngIf="kontaktForm.controls['id'].dirty && kontaktForm.hasError('required','id')">*Pflichtfeld</span>
+                                <span class="text-danger"
+                                    *ngIf="kontaktForm.controls['id'].dirty && kontaktForm.hasError('pattern','id')">*Dieses
+                                    Feld darf nur aus Zahlen bestehen</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Kontakte">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Typ</label>
+                                <input formControlName="typ" type="text" class="form-control" access="false"
+                                    value="{{massnahme.kontakts[0].typ || ''}}">
+                                <span class="text-danger"
+                                    *ngIf="kontaktForm.controls['typ'].dirty && kontaktForm.hasError('required','typ')">*Pflichtfeld</span>
+                                <span class="text-danger"
+                                    *ngIf="kontaktForm.controls['typ'].dirty && kontaktForm.hasError('pattern','typ')">*Dieses
+                                    Feld darf nur aus Zahlen bestehen</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Kontakte">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Ort</label>
+                                <input formControlName="ort" type="text" class="form-control" access="false"
+                                    value="{{massnahme.kontakts[0].ort || ''}}">
+                                <span class="text-danger"
+                                    *ngIf="kontaktForm.controls['ort'].dirty && kontaktForm.hasError('required','ort')">c*Pflichtfeld</span>
+                                <span class="text-danger"
+                                    *ngIf="kontaktForm.controls['ort'].dirty && kontaktForm.hasError('pattern','ort')">*Dieses
+                                    Feld darf nur aus Zahlen bestehen</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                        </td>
+                        <td>
+
+                        </td>
+                        <td>
+                            <div class="dialog button">
+                                <button mat-raised-button (click)="openDialogOrtKontakt()">Ort auswählen</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                    <tr>
+                        <td>
+                            <div class="Form Kontakte">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Adresse</label>
+                                <input formControlName="adresse" type="text" class="form-control" access="false"
+                                    value="{{massnahme.kontakts[0].adresse || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Kontakte">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Ist sichtbar</label>
+                                <input formControlName="istsichbar" type="text" class="form-control" access="false"
+                                    value="{{massnahme.kontakts[0].istsichbar || ''}}">
+                                <span class="text-danger"
+                                    *ngIf="kontaktForm.controls['istsichbar'].dirty && kontaktForm.hasError('required','istsichbar')">*Pflichtfeld</span>
+                                <span class="text-danger"
+                                    *ngIf="kontaktForm.controls['istsichbar'].dirty && kontaktForm.hasError('pattern','istsichbar')">*Dieses
+                                    Feld darf nur eine 1 oder 0 enthalten.</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Kontakte">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Benutzer</label>
+                                <input formControlName="benutzer" type="text" class="form-control" access="false"
+                                    value="{{massnahme.kontakts[0].benutzer || ''}}">
+                                <span class="text-danger"
+                                    *ngIf="kontaktForm.controls['benutzer'].dirty && kontaktForm.hasError('required','benutzer')">*Pflichtfeld</span>
+                                <span class="text-danger"
+                                    *ngIf="kontaktForm.controls['benutzer'].dirty && kontaktForm.hasError('pattern','benutzer')">*Dieses
+                                    Feld darf nur aus Zahlen bestehen</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                        </td>
+                        <td>
+
+                        </td>
+                        <td>
+                            <div class="dialog button">
+                                <button mat-raised-button (click)="openDialogUser()">Benutzer auswählen</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                    <tr>
+                        <td>
+                            <div class="Form Kontakte">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Quelle</label>
+                                <input formControlName="quelle" type="text" class="form-control" access="false"
+                                    value="{{massnahme.kontakts[0].quelle || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Kontakte">
+                                <label for="text-1661203032793" class="formbuilder-text-label">ist
+                                    Orgelbauer-Experte</label>
+                                <input formControlName="istorgelexperte" type="text" class="form-control" access="false"
+                                    value="{{massnahme.kontakts[0].istorgelexperte || ''}}">
+                                <span class="text-danger"
+                                    *ngIf="kontaktForm.controls['istorgelexperte'].dirty && kontaktForm.hasError('required','istorgelexperte')">*Pflichtfeld</span>
+                                <span class="text-danger"
+                                    *ngIf="kontaktForm.controls['istorgelexperte'].dirty && kontaktForm.hasError('pattern','istorgelexperte')">*Dieses
+                                    Feld darf nur aus einer 1 oder 0 bestehen</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Kontakte">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Ist Orgelbauer</label>
+                                <input formControlName="istorgelbauer" type="text" class="form-control" access="false"
+                                    value="{{massnahme.kontakts[0].istorgelbauer || ''}}">
+                                <span class="text-danger"
+                                    *ngIf="kontaktForm.controls['istorgelbauer'].dirty && kontaktForm.hasError('required','istorgelbauer')">*Pflichtfeld</span>
+                                <span class="text-danger"
+                                    *ngIf="kontaktForm.controls['istorgelbauer'].dirty && kontaktForm.hasError('pattern','istorgelbauer')">*Dieses
+                                    Feld darf nur aus einer 1 oder 0 bestehen</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="Form Kontakte">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Ist Urheber</label>
+                                <input formControlName="isturheber" type="text" class="form-control" access="false"
+                                    value="{{massnahme.kontakts[0].isturheber || ''}}">
+                                <span class="text-danger"
+                                    *ngIf="kontaktForm.controls['isturheber'].dirty && kontaktForm.hasError('required','isturheber')">*Pflichtfeld</span>
+                                <span class="text-danger"
+                                    *ngIf="kontaktForm.controls['isturheber'].dirty && kontaktForm.hasError('pattern','isturheber')">*Dieses
+                                    Feld darf nur aus einer 1 oder 0 bestehen</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Kontakte">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Name</label>
+                                <input formControlName="name" type="text" class="form-control" access="false"
+                                    value="{{massnahme.kontakts[0].name || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Kontakte">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Vorame</label>
+                                <input formControlName="vorname" type="text" class="form-control" access="false"
+                                    value="{{massnahme.kontakts[0].vorname || ''}}">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="Form Kontakte">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Synonyme</label>
+                                <input formControlName="synonyme" type="text" class="form-control" access="false"
+                                    value="{{massnahme.kontakts[0].synonyme  || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Kontakte">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Geburtsdatum</label>
+                                <input formControlName="geburtsdatum" type="text" class="form-control" access="false"
+                                    value="{{massnahme.kontakts[0].geburtsdatum  || ''}}">
+                                <span class="text-danger"
+                                    *ngIf="kontaktForm.controls['geburtsdatum'].dirty && kontaktForm.hasError('required','geburtsdatum')">*Pflichtfeld</span>
+                                <span class="text-danger"
+                                    *ngIf="kontaktForm.controls['geburtsdatum'].dirty && kontaktForm.hasError('pattern','geburtsdatum')">*Dieses
+                                    Feld darf nur aus Zahlen bestehen</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Kontakte">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Geburtsort</label>
+                                <input formControlName="geburtsort" type="text" class="form-control" access="false"
+                                    value="{{massnahme.kontakts[0].geburtsort  || ''}}">
+                                <span class="text-danger"
+                                    *ngIf="kontaktForm.controls['geburtsort'].dirty && kontaktForm.hasError('required','geburtsort')">*Pflichtfeld</span>
+                                <span class="text-danger"
+                                    *ngIf="kontaktForm.controls['geburtsort'].dirty && kontaktForm.hasError('pattern','geburtsort')">*Dieses
+                                    Feld darf nur aus Zahlen bestehen</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                        </td>
+                        <td>
+                            <div class="dialog button">
+                                <button mat-raised-button (click)="openDialogGebDatum()">Datum auswählen</button>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="dialog button">
+                                <button mat-raised-button (click)="openDialogGeburt()">Ort auswählen</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                    <tr>
+                        <td>
+                            <div class="Form Kontakte">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Taufdatum</label>
+                                <input formControlName="taufdatum" type="text" class="form-control" access="false"
+                                    value="{{massnahme.kontakts[0].taufdatum  || ''}}">
+                                <span class="text-danger"
+                                    *ngIf="kontaktForm.controls['taufdatum'].dirty && kontaktForm.hasError('required','taufdatum')">*Pflichtfeld</span>
+                                <span class="text-danger"
+                                    *ngIf="kontaktForm.controls['taufdatum'].dirty && kontaktForm.hasError('pattern','taufdatum')">*Dieses
+                                    Feld darf nur aus Zahlen bestehen</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Kontakte">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Name Mutter</label>
+                                <input formControlName="namemutter" type="text" class="form-control" access="false"
+                                    value="{{massnahme.kontakts[0].namemutter || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Kontakte">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Name Vater</label>
+                                <input formControlName="namevater" type="text" class="form-control" access="false"
+                                    value="{{massnahme.kontakts[0].namevater  || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="dialog button">
+                                <button mat-raised-button (click)="openDialogTaufDatum()">Datum auswählen</button>
+                            </div>
+                        </td>
+                        <td>
+
+                        </td>
+                        <td>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="Form Kontakte">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Sterbedatum</label>
+                                <input formControlName="sterbedatum" type="text" class="form-control" access="false"
+                                    value="{{massnahme.kontakts[0].sterbedatum  || ''}}">
+                                <span class="text-danger"
+                                    *ngIf="kontaktForm.controls['sterbedatum'].dirty && kontaktForm.hasError('required','sterbedatum')">*Pflichtfeld</span>
+                                <span class="text-danger"
+                                    *ngIf="kontaktForm.controls['sterbedatum'].dirty && kontaktForm.hasError('pattern','sterbedatum')">*Dieses
+                                    Feld darf nur aus Zahlen bestehen</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Kontakte">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Beerdigungsdatum</label>
+                                <input formControlName="beerdigungsdatum" type="text" class="form-control"
+                                    access="false" value="{{massnahme.kontakts[0].beerdigungsdatum  || ''}}">
+                                <span class="text-danger"
+                                    *ngIf="kontaktForm.controls['beerdigungsdatum'].dirty && kontaktForm.hasError('required','beerdigungsdatum')">*Pflichtfeld</span>
+                                <span class="text-danger"
+                                    *ngIf="kontaktForm.controls['beerdigungsdatum'].dirty && kontaktForm.hasError('pattern','beerdigungsdatum')">*Dieses
+                                    Feld darf nur aus Zahlen bestehen</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Kontakte">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Generation</label>
+                                <input formControlName="generation" type="text" class="form-control" access="false"
+                                    value="{{massnahme.kontakts[0].generation  || ''}}">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="dialog button">
+                                <button mat-raised-button (click)="openSterbeDatum()">Datum auswählen</button>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="dialog button">
+                                <button mat-raised-button (click)="openBeerdigung()">Datum auswählen</button>
+                            </div>
+                        </td>
+                        <td>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="Form Kontakte">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Name 1</label>
+                                <input formControlName="name1" type="text" class="form-control" access="false"
+                                    value="{{massnahme.kontakts[0].name1  || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Kontakte">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Name 2</label>
+                                <input formControlName="name2" type="text" class="form-control" access="false"
+                                    value="{{massnahme.kontakts[0].name2 || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Kontakte">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Firmentyp</label>
+                                <input formControlName="firmentyp" type="text" class="form-control" access="false"
+                                    value="{{massnahme.kontakts[0].firmentyp || ''}}">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="Form Kontakte">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Vorgänger</label>
+                                <input formControlName="vorgaenger" type="text" class="form-control" access="false"
+                                    value="{{massnahme.kontakts[0].vorgaenger || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Kontakte">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Gründungsdatum</label>
+                                <input formControlName="gruendungsdatum" type="text" class="form-control" access="false"
+                                    value="{{massnahme.kontakts[0].gruendungsdatum  || ''}}">
+                                <span class="text-danger"
+                                    *ngIf="kontaktForm.controls['gruendungsdatum'].dirty && kontaktForm.hasError('required','gruendungsdatum')">*Pflichtfeld</span>
+                                <span class="text-danger"
+                                    *ngIf="kontaktForm.controls['gruendungsdatum'].dirty && kontaktForm.hasError('pattern','gruendungsdatum')">*Dieses
+                                    Feld darf nur aus Zahlen bestehen</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Kontakte">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Auflösungsdatum</label>
+                                <input formControlName="aufloesungsdatum" type="text" class="form-control"
+                                    access="false" value="{{massnahme.kontakts[0].aufloesungsdatum  || ''}}">
+                                <span class="text-danger"
+                                    *ngIf="kontaktForm.controls['aufloesungsdatum'].dirty && kontaktForm.hasError('required','aufloesungsdatum')">*Pflichtfeld</span>
+                                <span class="text-danger"
+                                    *ngIf="kontaktForm.controls['aufloesungsdatum'].dirty && kontaktForm.hasError('pattern','aufloesungsdatum')">*Dieses
+                                    Feld darf nur aus Zahlen bestehen</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                        <td>
+                            <div class="dialog button">
+                                <button mat-raised-button (click)="openGruendung()">Datum auswählen</button>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="dialog button">
+                                <button mat-raised-button (click)="openAufloesung()">Datum auswählen</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="Form Kontakte">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Nachfolger</label>
+                                <input formControlName="nachfolger" type="text" class="form-control" access="false"
+                                    value="{{massnahme.kontakts[0].nachfolger || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Kontakte">
+                                <label for="text-1661203032793" class="formbuilder-text-label">P Bezeichnung</label>
+                                <input formControlName="pBez" type="text" class="form-control" access="false"
+                                    value="{{massnahme.kontakts[0].pBez || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Kontakte">
+                                <label for="text-1661203032793" class="formbuilder-text-label">X-ID</label>
+                                <input formControlName="xid" type="text" class="form-control" access="false"
+                                    value="{{massnahme.kontakts[0].xid || ''}}">
+                                <span class="text-danger"
+                                    *ngIf="kontaktForm.controls['xid'].dirty && kontaktForm.hasError('required','xid')">*Pflichtfeld</span>
+                                <span class="text-danger"
+                                    *ngIf="kontaktForm.controls['xid'].dirty && kontaktForm.hasError('pattern','xid')">*Dieses
+                                    Feld darf nur aus Zahlen bestehen</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Kontakte">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Sterbeort</label>
+                                <input formControlName="sterbeort" type="text" class="form-control" access="false"
+                                    value="{{massnahme.kontakts[0].sterbeort || ''}}">
+                                <span class="text-danger"
+                                    *ngIf="kontaktForm.controls['sterbeort'].dirty && kontaktForm.hasError('required','sterbeort')">*Pflichtfeld</span>
+                                <span class="text-danger"
+                                    *ngIf="kontaktForm.controls['sterbeort'].dirty && kontaktForm.hasError('pattern','sterbeort')">*Dieses
+                                    Feld darf nur aus Zahlen bestehen</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                        </td>
+                        <td>
+
+                        </td>
+                        <td>
+
+                        </td>
+                        <td>
+                            <div class="dialog button">
+                                <button mat-raised-button (click)="openSterbeOrt()">Ort auswählen</button>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <div class="Form Kontakte">
+                    <label for="text-1661203032793" class="formbuilder-text-label">Kommentar</label>
+                    <br>
+                    <textarea formControlName="kommentar"
+                        class="kommentar">{{massnahme.kontakts[0].kommentar || ''}}</textarea>
+                </div>
+            </form>
+            <br>
+        </div>
+        <div class="tab-content">
+            <h1>Tastenreihen</h1>
+            <form [formGroup]="tastenreihenForm">
+                <select id='peeps' name='people' [(ngModel)]="tastenreiheSelect">
+                    <option *ngFor="let item of massnahme.tastenreihes" [value]="massnahme.tastenreihes[0].name">
+                        {{item.name}}
+                    </option>
+                </select>
+                <table>
+                    <tr>
+                        <td>
+                            <div class="Form Tastenreihen">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Tastenreihe-ID</label>
+                                <input formControlName="id" type="text" class="form-control"
+                                    value="{{massnahme.tastenreihes[0].id|| ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Tastenreihen">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Massnahme</label>
+                                <input formControlName="massnahme" type="text" class="form-control"
+                                    value="{{massnahme.tastenreihes[0].massnahme || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Tastenreihen">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Name</label>
+                                <input formControlName="name" type="text" class="form-control"
+                                    value="{{massnahme.tastenreihes[0].name || ''}}">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="Form Tastenreihen">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Position</label>
+                                <input formControlName="position" type="text" class="form-control"
+                                    value="{{massnahme.tastenreihes[0].position || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Tastenreihen">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Tastenumfang</label>
+                                <input formControlName="tastenumfang" type="text" class="form-control"
+                                    value="{{massnahme.tastenreihes[0].tastenumfang || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Tastenreihen">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Tiefoktave</label>
+                                <input formControlName="tiefeoktave" type="text" class="form-control"
+                                    value="{{massnahme.tastenreihes[0].tiefoktave || ''}}">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="Form Tastenreihen">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Subsemitionen</label>
+                                <input formControlName="subsemitionen" type="text" class="form-control" access="false"
+                                    value="{{massnahme.tastenreihes[0].subsemitionen || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Tastenreihen">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Materialtasten</label>
+                                <input formControlName="materialtasten" type="text" class="form-control" access="false"
+                                    value="{{massnahme.tastenreihes[0].materialtasten|| ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Tastenreihen">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Untertastenlänge</label>
+                                <input formControlName="untertastenlaenge" type="text" class="form-control"
+                                    access="false" value="{{massnahme.tastenreihes[0].untertastenlaenge || ''}}">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="Form Tastenreihen">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Vorderteillänge</label>
+                                <input formControlName="vorderteillaenge" type="text" class="form-control"
+                                    access="false" value="{{massnahme.tastenreihes[0].vorderteillaenge || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Tastenreihen">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Obertastenlänge</label>
+                                <input formControlName="obertastenlaenge" type="text" class="form-control"
+                                    access="false" value="{{massnahme.tastenreihes[0].obertastenlaenge || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Tastenreihen">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Tastenhebel</label>
+                                <input formControlName="tastenhebel" type="text" class="form-control" access="false"
+                                    value="{{massnahme.tastenreihes[0].tastenhebel || ''}}">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="Form Tastenreihen">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Stichmass</label>
+                                <input formControlName="stichmass" type="text" class="form-control" access="false"
+                                    value="{{massnahme.tastenreihes[0].stichmass || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Tastenreihen">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Tastendruck</label>
+                                <input formControlName="tastendruck" type="text" class="form-control" access="false"
+                                    value="{{massnahme.tastenreihes[0].tastendruck || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Tastenreihen">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Manual Erhalten?</label>
+                                <input formControlName="manualerhalten" type="text" class="form-control" access="false"
+                                    value="{{massnahme.tastenreihes[0].manualerhalten || ''}}">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="Form Tastenreihen">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Klaviatur
+                                    Erhalten?</label>
+                                <input formControlName="klaviaturerhalten" type="text" class="form-control"
+                                    access="false" value="{{massnahme.tastenreihes[0].klaviaturerhalten || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Tastenreihen">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Pedaltyp</label>
+                                <input formControlName="pedaltyp" type="text" class="form-control" access="false"
+                                    value="{{massnahme.tastenreihes[0].pedaltyp || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Tastenreihen">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Pedalklaviaturstellung
+                                </label>
+                                <input formControlName="pedalklaviaturstellung" type="text" class="form-control"
+                                    access="false" value="{{massnahme.tastenreihes[0].pedalklaviaturstellung || ''}}">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="Form Tastenreihen">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Tastenumfangpedal</label>
+                                <input formControlName="tastenumfangpedal" type="text" class="form-control"
+                                    access="false" value="{{massnahme.tastenreihes[0].tastenumfangpedal || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Tastenreihen">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Tiefoktavpedal</label>
+                                <input formControlName="tiefoktavpedal" type="text" class="form-control" access="false"
+                                    value="{{massnahme.tastenreihes[0].tiefoktavpedal || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Tastenreihen">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Tastenlängepedal
+                                    sichtbar?</label>
+                                <input formControlName="tastenlaengepedalsichtbar" type="text" class="form-control"
+                                    access="false"
+                                    value="{{massnahme.tastenreihes[0].tastenlaengepedalsichtbar || ''}}">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="Form Tastenreihen">
+                                <label for="text-1661203032793"
+                                    class="formbuilder-text-label">Materialpedaltasten</label>
+                                <input formControlName="materialpedaltasten" type="text" class="form-control"
+                                    access="false" value="{{massnahme.tastenreihes[0].materialpedaltasten || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Tastenreihen">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Pedal erhalten?</label>
+                                <input formControlName="pedalerhalten" type="text" class="form-control" access="false"
+                                    value="{{massnahme.tastenreihes[0].pedalerhalten || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Tastenreihen">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Erhalten</label>
+                                <input formControlName="erhalten" type="text" class="form-control" access="false"
+                                    value="{{massnahme.tastenreihes[0].erhalten || ''}}">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="Form Tastenreihen">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Koppelmanual</label>
+                                <input formControlName="koppelmanual" type="text" class="form-control" access="false"
+                                    value="{{massnahme.tastenreihes[0].koppelmanual || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Tastenreihen">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Spieltraktur</label>
+                                <input formControlName="spieltraktur" type="text" class="form-control" access="false"
+                                    value="{{massnahme.tastenreihes[0].spieltraktur || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Tastenreihen">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Spieltraktur
+                                    erhalten?</label>
+                                <input formControlName="spieltrakturerhalten" type="text" class="form-control"
+                                    access="false" value="{{massnahme.tastenreihes[0].spieltrakturerhalten || ''}}">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="Form Tastenreihen">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Registertraktur</label>
+                                <input formControlName="registertraktur" type="text" class="form-control" access="false"
+                                    value="{{massnahme.tastenreihes[0].registertraktur || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Tastenreihen">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Typusregisterzüge</label>
+                                <input formControlName="typusregisterzuege" type="text" class="form-control"
+                                    access="false" value="{{massnahme.tastenreihes[0].typusregisterzuege || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Tastenreihen">
+                                <label for="text-1661203032793"
+                                    class="formbuilder-text-label">Registerbeschriftung</label>
+                                <input formControlName="registerbeschriftung" type="text" class="form-control"
+                                    access="false" value="{{massnahme.tastenreihes[0].registerbeschriftung || ''}}">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="Form Tastenreihen">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Registertraktur
+                                    erhalten?</label>
+                                <input formControlName="registertrakturerhalten" type="text" class="form-control"
+                                    access="false" value="{{massnahme.tastenreihes[0].registertrakturerhalten || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Tastenreihen">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Anzahl
+                                    Transmissionen</label>
+                                <input formControlName="anzahltransmissionen" type="text" class="form-control"
+                                    access="false" value="{{massnahme.tastenreihes[0].anzahltransmissionen || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Tastenreihen">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Anzahl Auszüge</label>
+                                <input formControlName="anzahlauszuege" type="text" class="form-control" access="false"
+                                    value="{{massnahme.tastenreihes[0].anzahlauszuege || ''}}">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="Form Tastenreihen">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Anzahl
+                                    Verlängerungen</label>
+                                <input formControlName="anzahlverlaengerungen" type="text" class="form-control"
+                                    access="false" value="{{massnahme.tastenreihes[0].anzahlverlaengerungen || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Tastenreihen">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Anzahl Sammelzüge</label>
+                                <input formControlName="anzahlsammelzuege" type="text" class="form-control"
+                                    access="false" value="{{massnahme.tastenreihes[0].anzahlsammelzuege || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Tastenreihen">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Nebenregister</label>
+                                <input formControlName="nebenregister" type="text" class="form-control" access="false"
+                                    value="{{massnahme.tastenreihes[0].nebenregister || ''}}">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="Form Tastenreihen">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Kommentar
+                                    Tastenreihe</label>
+                                <input formControlName="kommentartastenreihe" type="text" class="form-control"
+                                    access="false" value="{{massnahme.tastenreihes[0].kommentartastenreihe || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Tastenreihen">
+                                <label for="text-1661203032793" class="formbuilder-text-label">X-ID</label>
+                                <input formControlName="xid" type="text" class="form-control" access="false"
+                                    value="{{massnahme.tastenreihes[0].xid || ''}}">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            <br>
+        </div>
+        <div class="tab-content">
+            <h1>Werke</h1>
+            <form [formGroup]="werkForm">
+                <select id='peeps' name='people' [(ngModel)]="tastenreiheSelect">
+                    <option *ngFor="let item of massnahme.tastenreihes[0].werks"
+                        [value]="massnahme.tastenreihes[0].werks[0].name">
+                        {{item.name}}
+                    </option>
+                </select>
+                <table>
+                    <tr>
+                        <td>
+                            <div class="Form Werke">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Werk-ID</label>
+                                <input formControlName="id" type="text" class="form-control"
+                                    value="{{massnahme.tastenreihes[0].werks[0].id|| ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Werke">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Tastenreihe</label>
+                                <input formControlName="tastenreihe" type="text" class="form-control"
+                                    value="{{massnahme.tastenreihes[0].werks[0].tastenreihe || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Werke">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Position</label>
+                                <input formControlName="position" type="text" class="form-control"
+                                    value="{{massnahme.tastenreihes[0].werks[0].position || ''}}">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="Form Werke">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Name</label>
+                                <input formControlName="name" type="text" class="form-control"
+                                    value="{{massnahme.tastenreihes[0].werks[0].name || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Werke">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Werkschwellbar</label>
+                                <input formControlName="werkschwellbar" type="text" class="form-control"
+                                    value="{{massnahme.tastenreihes[0].werks[0].werkschwellbar || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Werke">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Kommentarwerk</label>
+                                <input formControlName="kommentarwerk" type="text" class="form-control"
+                                    value="{{massnahme.tastenreihes[0].werks[0].kommentarwerk || ''}}">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="Form Werke">
+                                <label for="text-1661203032793" class="formbuilder-text-label">X-ID</label>
+                                <input formControlName="xid>" type="text" class="form-control" access="false"
+                                    value="{{massnahme.tastenreihes[0].werks[0].xid || ''}}">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            <br>
+        </div>
+        <div class="tab-content">
+            <h1>Laden</h1>
+            <form [formGroup]="ladenForm">
+                <select id='peeps' name='people' [(ngModel)]="tastenreiheSelect">
+                    <option *ngFor="let item of massnahme.tastenreihes[0].werks[0].ladens"
+                        [value]="massnahme.tastenreihes[0].werks[0].ladens[0].name">
+                        {{item.name}}
+                    </option>
+                </select>
+                <table>
+                    <tr>
+                        <td>
+                            <div class="Form Ladens">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Laden-ID</label>
+                                <input formControlName="id" type="text" class="form-control"
+                                    value="{{massnahme.tastenreihes[0].werks[0].ladens[0].id || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Ladens">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Werk</label>
+                                <input formControlName="werk" type="text" class="form-control"
+                                    value="{{massnahme.tastenreihes[0].werks[0].ladens[0].werk || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Ladens">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Position</label>
+                                <input formControlName="position" type="text" class="form-control"
+                                    value="{{massnahme.tastenreihes[0].werks[0].ladens[0].position || ''}}">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="Form Ladens">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Name</label>
+                                <input formControlName="name" type="text" class="form-control"
+                                    value="{{massnahme.tastenreihes[0].werks[0].ladens[0].name || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Ladens">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Ladentypen</label>
+                                <input formControlName="ladentypen" type="text" class="form-control"
+                                    value="{{massnahme.tastenreihes[0].werks[0].ladens[0].ladentypen || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Ladens">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Winddruck</label>
+                                <input formControlName="winddruck" type="text" class="form-control"
+                                    value="{{massnahme.tastenreihes[0].werks[0].ladens[0].winddruck || ''}}">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="Form Ladens">
+                                <label for="text-1661203032793"
+                                    class="formbuilder-text-label">Tonumfangmanualwerke</label>
+                                <input formControlName="tonumfangmanualwerke" type="text" class="form-control"
+                                    value="{{massnahme.tastenreihes[0].werks[0].ladens[0].tonumfangmanualwerke || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Ladens">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Laden erhalten?</label>
+                                <input formControlName="ladenerhalten" type="text" class="form-control"
+                                    value="{{massnahme.tastenreihes[0].werks[0].ladens[0].ladenerhalten || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Ladens">
+                                <label for="text-1661203032793"
+                                    class="formbuilder-text-label">Dichtungsystemlade</label>
+                                <input formControlName="dichtungsystemlade" type="text" class="form-control"
+                                    value="{{massnahme.tastenreihes[0].werks[0].ladens[0].dichtungsystemlade || ''}}">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="Form Ladens">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Ventilordnunglade</label>
+                                <input formControlName="ventilordnunglade" type="text" class="form-control"
+                                    value="{{massnahme.tastenreihes[0].werks[0].ladens[0].ventilordnunglade || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Ladens">
+                                <label for="text-1661203032793"
+                                    class="formbuilder-text-label">Rasterbrettbeschreibung</label>
+                                <input formControlName="Rasterbrettbeschreibung" type="text" class="form-control"
+                                    value="{{massnahme.tastenreihes[0].werks[0].ladens[0].rasterbrettbeschreibung || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Ladens">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Inschriften</label>
+                                <input formControlName="inschriften" type="text" class="form-control"
+                                    value="{{massnahme.tastenreihes[0].werks[0].ladens[0].inschriften || ''}}">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="Form Ladens">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Kommentar Laden</label>
+                                <input formControlName="kommentarladen" type="text" class="form-control"
+                                    value="{{massnahme.tastenreihes[0].werks[0].ladens[0].kommentarladen || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Ladens">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Tonumfang</label>
+                                <input formControlName="tonumfang" type="text" class="form-control"
+                                    value="{{massnahme.tastenreihes[0].werks[0].ladens[0].tonumfang || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Ladens">
+                                <label for="text-1661203032793" class="formbuilder-text-label">X-ID</label>
+                                <input formControlName="xid" type="text" class="form-control"
+                                    value="{{massnahme.tastenreihes[0].werks[0].ladens[0].xid || ''}}">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            <br>
+        </div>
+        <div class="tab-content">
+            <h1>Register</h1>
+            <form [formGroup]="registerForm">
+                <select id='peeps' name='people' [(ngModel)]="tastenreiheSelect">
+                    <option *ngFor="let item of massnahme.tastenreihes[0].werks[0].ladens[0].registers"
+                        [value]="massnahme.tastenreihes[0].werks[0].ladens[0].name">
+                        {{item.name}}
+                    </option>
+                </select>
+                <table>
+                    <tr>
+                        <td>
+                            <div class="Form Registers">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Laden-ID</label>
+                                <input formControlName="id" type="text" class="form-control"
+                                    value="{{massnahme.tastenreihes[0].werks[0].ladens[0].registers[0].id|| ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Registers">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Laden</label>
+                                <input formControlName="laden" type="text" class="form-control"
+                                    value="{{massnahme.tastenreihes[0].werks[0].ladens[0].registers[0].laden || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Registers">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Position</label>
+                                <input formControlName="position" type="text" class="form-control"
+                                    value="{{massnahme.tastenreihes[0].werks[0].ladens[0].registers[0].position || ''}}">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="Form Registers">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Name</label>
+                                <input formControlName="name" type="text" class="form-control"
+                                    value="{{massnahme.tastenreihes[0].werks[0].ladens[0].registers[0].name || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Registers">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Tonhöhe</label>
+                                <input formControlName="tonhoehe" type="text" class="form-control"
+                                    value="{{massnahme.tastenreihes[0].werks[0].ladens[0].registers[0].tonhoehe || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Registers">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Kommentar</label>
+                                <input formControlName="kommentar" type="text" class="form-control"
+                                    value="{{massnahme.tastenreihes[0].werks[0].ladens[0].registers[0].kommentar || ''}}">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="Form Registers">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Position Lade</label>
+                                <input formControlName="positionlade" type="text" class="form-control"
+                                    value="{{massnahme.tastenreihes[0].werks[0].ladens[0].registers[0].positionlade || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Registers">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Material</label>
+                                <input formControlName="material" type="text" class="form-control"
+                                    value="{{massnahme.tastenreihes[0].werks[0].ladens[0].registers[0].material || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Registers">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Register
+                                    erhalten?</label>
+                                <input formControlName="registererhalten" type="text" class="form-control"
+                                    value="{{massnahme.tastenreihes[0].werks[0].ladens[0].registers[0].registererhalten || ''}}">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="Form Registers">
+                                <label for="text-1661203032793" class="formbuilder-text-label">ID Orgel vorher</label>
+                                <input formControlName="idorgelvorher" type="text" class="form-control"
+                                    value="{{massnahme.tastenreihes[0].werks[0].ladens[0].registers[0].idorgelvorher || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Registers">
+                                <label for="text-1661203032793" class="formbuilder-text-label">ID Orgel nachher</label>
+                                <input formControlName="idorgelnachher" type="text" class="form-control"
+                                    value="{{massnahme.tastenreihes[0].werks[0].ladens[0].registers[0].idorgelnachher || ''}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Registers">
+                                <label for="text-1661203032793" class="formbuilder-text-label">X-ID</label>
+                                <input formControlName="xid" type="text" class="form-control"
+                                    value="{{massnahme.tastenreihes[0].werks[0].ladens[0].registers[0].xid || ''}}">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div class="tab-content">
+            <h1>Dateiupload</h1>
+            <form [formGroup]="mediaForm">
+                <label>Datei auswählen (&lt; 10MB)</label><br />
+                <input class="form-control" type="file" accept=".jpg, .bmp, .gif, .pdf, .doc, .mp3"
+                    (change)="onFileChange($event)" /><br />
+                <table>
+                    <tr>
+                        <td>
+                            <div class="Form Medien">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Name</label>
+                                <input formControlName="name" type="text" class="form-control"
+                                    value="{{massnahme.media[0].name}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Medien">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Datum</label>
+                                <input formControlName="datum" type="text" class="form-control"
+                                    value="{{massnahme.media[0].datum}}">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Form Medien">
+                                <label for="text-1661203032793" class="formbuilder-text-label">Beschreibung</label>
+                                <br>
+                                <textarea formControlName="beschreibung"
+                                    class="form-control">{{massnahme.media[0].beschreibung}}</textarea>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                        </td>
+                        <td>
+                            <div class="dialog button">
+                                <button mat-raised-button (click)="openMediaDate()">Datum auswählen</button>
+                            </div>
+                        </td>
+                        <td>
+
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            <br>
+            <button (click)="saveMedia()">Datei hochladen</button>
+            <br>
+            {{uploadLog}}
+            <br />
+            <br>
+        </div>
+    </div>
+    <br>
+    <button (click)="saveOrgel()">Speichern</button>
+    <button type="submit" (click)="saveNewOrgel()">Speichern als Neu</button>
+</div>

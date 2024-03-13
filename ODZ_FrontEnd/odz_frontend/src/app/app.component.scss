@@ -1,0 +1,189 @@
+.Site {
+  height: 100%;
+  width: 100%;
+
+
+  .Icons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+
+    img {
+      width: 150px;
+
+    }
+
+    .mat-menu {
+      background-color: #30086c;
+    }
+  }
+}
+
+.ContentArea {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+
+  .Background {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+
+    .Bar {
+      height: 20px;
+      background: rgb(3, 2, 33);
+      background: linear-gradient(90deg, rgba(3, 2, 33, 1) 0%, rgba(7, 7, 97, 1) 33%, rgba(5, 5, 116, 1) 66%, rgba(4, 77, 177, 1) 100%);
+      margin: 0;
+    }
+
+    .Bg-Img {
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .NavBar {
+    height: 20px;
+    background: black;
+    margin: 0;
+
+    .Links {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      font-size: 18px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: azure;
+      text-decoration-color: azure;
+    }
+
+    a {
+      color: azure;
+      text-decoration-color: azure;
+      text-decoration: solid;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+  }
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+a:hover {
+  background-color: rgb(3, 3, 69);
+}
+
+a:active {
+  background-color: blue;
+}
+
+.hamburger {
+  display: none;
+  font-size: 24px;
+  user-select: none;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+input[type=checkbox] {
+
+  display: none;
+
+}
+
+.dropdown {
+  display: none;
+  top: 10px;
+  left: -10px;
+  width: 200px;
+  height: 250px;
+  li {
+    padding: 0.5em 1em;
+    width: 8em;
+    background-color: black;
+    text-align: center;
+    list-style-type: none;
+
+  }
+
+  li:hover {
+
+    background-color: #30086c;
+
+    a:hover {
+      background-color: transparent;
+    }
+
+    a:active {
+      background-color: transparent;
+    }
+  }
+
+  a {
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    text-decoration: none;
+  }
+}
+
+@media (max-width: 900px) {
+
+  .ContentArea .NavBar {
+    display: none;
+  }
+
+  input[type=checkbox]:checked~.dropdown {
+
+    display: block;
+
+  }
+
+  .hamburger {
+
+    display: block;
+
+  }
+
+  .Site {
+    height: 100%;
+    width: 100%;
+
+    .Icons {
+      align-items: left;
+
+
+      img {
+        width: 100px;
+
+      }
+    }
+  }
+
+  .Background {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+
+    .Bar {
+      height: 5px;
+      background: rgb(3, 2, 33);
+      background: linear-gradient(90deg, rgba(3, 2, 33, 1) 0%, rgba(7, 7, 97, 1) 33%, rgba(5, 5, 116, 1) 66%, rgba(4, 77, 177, 1) 100%);
+      margin: 0;
+    }
+
+    .Bg-Img {
+      img {
+        width: 80%;
+        height: 80%;
+      }
+    }
+  }
+}

@@ -1,0 +1,142 @@
+.Header {
+    margin-top: 50px;
+    margin-left: 50px;
+    max-width: 80%;
+}
+
+.mat-column-position {
+  max-width: 100px;
+}
+
+.mat-column-name {
+  max-width: 100px;
+}
+
+.Sidefilter {
+    position: absolute;
+    margin-left: 20px;
+}
+
+.mat-expansion-panel {   
+    box-shadow: none !important;
+}
+
+.mat-table {
+    width: 90%;
+  } 
+
+.mat-paginator {
+    display: flex;
+    justify-content: left;
+  } 
+
+ .mat-column-name {
+  flex: none;
+  width: 150px;
+ } 
+
+ .mat-column-massnahme1 {
+  flex: none;
+  width: 100px;
+ } 
+
+ .mat-column-kantonName {
+  flex: none;
+  width: 100px;
+ } 
+
+ .mat-column-bezeichnung {
+  flex: none;
+  width: 100px;
+ } 
+
+ .mat-column-gebaeude {
+  flex: none;
+  width: 200px;
+ } 
+
+ .mat-column-kontakts {
+  flex: none;
+  width: 200px;
+ } 
+
+ .mat-column-synonyme {
+  flex: none;
+  width: 100px;
+  } 
+
+ .mat-column-details {
+  flex: none;
+  width: 50px;
+ } 
+
+ .mat-column-editierung {
+  flex: none;
+  width: 50px;
+ } 
+
+ .mat-form-field {
+  width: 80px;
+  margin-left: 30px;
+  margin-right: 30px;
+ }
+
+  ::ng-deep .mat-sort-header-arrow {
+    transform: none !important;
+    opacity: 1 !important;
+}
+
+
+@media (max-width: 900px) {
+  .Header {
+    font-size: 10px;
+  }
+
+  .mat-table {
+    justify-content: left;
+    width: 200px;
+  } 
+
+  .mat-column-name {
+    font-size: 7px;
+  }
+
+  .mat-column-synonyme {
+    font-size: 7px;
+  }
+
+  .mat-column-kantonName {
+    font-size: 7px;
+  }
+
+  .mat-column-bezeichnung {
+    font-size: 7px;
+  }
+
+  .mat-column-gebaeude {
+    font-size: 7px;
+  }
+
+  .mat-column-kontakts {
+    font-size: 7px;
+  }
+
+  .mat-column-details {
+    font-size: 7px;
+    padding-right: 10px;
+  }
+
+  .mat-column-editierung {
+    display: none;
+  }
+
+  h1 {
+    font-size: 18px;
+    margin-bottom: 0px;
+  }
+
+  .Header {
+    margin-top: 5px;
+    margin-left: 5px;
+}
+}
