@@ -44,7 +44,7 @@ export class MapComponent implements OnInit {
           //console.log("Organ:" + this.organ[o].id + this.organ[o].latitude + this.organ[o].longitude);
         }
         let loader = new Loader({
-          apiKey: 'AIzaSyCpjVzRN8JxgBoa-9-vuYbbJxveu2owXuE',
+          apiKey: 'API_Key',
         })
 
         await loader.load().then(() => {
